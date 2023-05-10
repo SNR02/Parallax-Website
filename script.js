@@ -43,3 +43,21 @@ function finalVideo(){
 }
 // ended, when the video ends
 videoFile.addEventListener('ended', finalVideo)
+
+function checkOrientation() {
+    var overlay = document.getElementById('overlay');
+    var app = document.getElementById('app');
+    if (window.matchMedia("(orientation: portrait)").matches) {
+        // Portrait orientation
+        overlay.style.display = 'block';
+        app.style.display = 'none';
+    } else {
+        // Landscape orientation
+        overlay.style.display = 'none';
+        app.style.display = 'block';
+    }
+}
+
+window.addEventListener('load', checkOrientation, false);
+window.addEventListener('resize', checkOrientation, false);
+window.addEventListener('orientationchange', checkOrientation, false);
