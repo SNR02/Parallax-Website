@@ -422,13 +422,20 @@ textarea::-webkit-scrollbar-thumb{
 
 .foot{
     padding-top: 3rem;
-    background-color: #040228;
+    background: linear-gradient(#121010 10%, #13057f 90%);
+    /* background: linear-gradient(#ec592c 0%, #13057f 90%); */
+}
+
+.foot .foot-bg{
+    background: url("foot-img.jpg") no-repeat center center/cover;
 }
 
 .foot .foot-content{
     display: flex;
     flex-wrap: wrap;
-    padding-bottom: 30px;
+    padding-bottom: 100px;
+    margin-bottom: 45px;
+    
 }
 
 .foot .foot-content .foot-box img{
@@ -554,14 +561,47 @@ textarea::-webkit-scrollbar-thumb{
     color: #FF0000;
   }
 
+
+
   .foot .copyright p{
-    font-size: 2rem;
+    font-size: 0.8rem;
     text-align: center;
     color: #fff;
-    padding: 20px;
-    border-top: 1px solid white;
+    /* padding: 20px; */
+    /* border-top: 1px solid white; */
   }
 
   .foot .copyright span{
-    color: #af106d;
+    font-size: 1.3rem;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    
+    
   }
+
+  /* Styles for the overlay and popup message */
+  #overlay {
+    display: none;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,0.5);
+    z-index: 2;
+    cursor: pointer;
+}
+
+#text{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    font-size: 20px;
+    color: white;
+    text-align: center;
+    transform: translate(-50%,-50%);
+    -ms-transform: translate(-50%,-50%);
+}
+
+  /* media queries */
