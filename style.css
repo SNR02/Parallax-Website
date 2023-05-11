@@ -232,9 +232,11 @@ header{
 
 /*=============== VIDEO ===============*/
 .video{
-    background-color: #040228;
-    position: relative;
     padding: 100px;
+    min-height: 100vh;
+    width: 100vw;
+    background: #000;
+    position: relative;
 }
 
 .video .section__title{
@@ -250,6 +252,97 @@ header{
     -webkit-background-clip: text;
     font-family: mv boli;
 }
+
+/* ambient code starts */
+/* Import Google font - Poppins */
+.container3, .video-controls, .video-timer, .options{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+#blurred{
+  position: absolute;
+  align-self: center;
+  filter: blur(100px);
+  width: 130%;
+  max-width: 1200px;
+  aspect-ratio: 16 / 9;
+  opacity: 0.5;
+}
+
+
+
+.container3{
+  width: 98%;
+  user-select: none;
+  overflow: hidden;
+  /* width: 900px; */
+  border-radius: 5px;
+  /* background: #000; */
+  aspect-ratio: 16 / 9;
+  position: relative;
+  /* box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1); */
+}
+
+.container3 video{
+  width: 100%;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+@media screen and (max-width: 540px) {
+  .wrapper .video-controls{
+    padding: 3px 10px 7px;
+  }
+  .options input, .progress-area span{
+    display: none!important;
+  }
+  .options button{
+    height: 30px;
+    width: 30px;
+    font-size: 17px;
+  }
+  .options .video-timer{
+    margin-left: 5px;
+  }
+  .video-timer .separator{
+    font-size: 14px;
+    margin: 0 2px;
+  }
+  .options button :where(i, span) {
+    line-height: 30px;
+  }
+  .options button span{
+    font-size: 21px;
+  }
+  .options .video-timer, .progress-area span, .speed-options li{
+    font-size: 12px;
+  }
+  .playback-content .speed-options{
+    width: 75px;
+    left: -30px;
+    bottom: 30px;
+  }
+  .speed-options li{
+    margin: 1px 0;
+    padding: 3px 0 3px 10px;
+  }
+  .right .pic-in-pic{
+    display: none;
+  }
+}
+.blur{
+  width: 150%;
+  height: 150%;
+  background-color: rgba(0,0, 0, 0.5);
+  filter: blur(25px);
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+/* ambient code ends */
 
 .video p{
     margin-top: 70px;
@@ -267,15 +360,7 @@ header{
     margin-bottom: var(--mb-2-5);
 }
 
-.video__description .sub-head{
-    font-size: 1.3rem;
-    color: #f4bb2b;
-    font-family: mv boli;
-}
 
-.video__description .sub-head:hover{
-    text-decoration: underline;
-}
   
 .video__content {
     position: relative;
@@ -286,13 +371,13 @@ header{
 
 .video__content video{
     display: inline-block;
-    width:50%;
+    width:57%;
 }
   
 .video__button {
     position: relative;
-    top: 11.9rem;
-    right: 4rem;
+    top: 12.6rem;
+    right: 22rem;
     bottom: -1rem;
     padding: 15px;
     height: 50px;
@@ -321,6 +406,8 @@ header{
 }
 
 .container2 form{
+    max-width: 100%;
+    overflow-wrap: wrap;
     width: 670px;
     height: 400px;
     display: flex;
@@ -377,10 +464,11 @@ header{
     font-size: 15px;
     padding: 10px;
     outline: none;
-    min-width: 600px;
-    max-width: 600px;
+    min-width: 100%;
+    max-width: 100%;
     min-height: 80px;
     max-height: 80px;
+    overflow-wrap: break-word;;
 }
 
 input[type=text], input[type=email]{
@@ -605,3 +693,77 @@ textarea::-webkit-scrollbar-thumb{
 }
 
   /* media queries */
+
+
+@media screen and (max-width: 480px) {
+    *{
+        margin:0;
+        padding:0;
+        /* border: 1px solid red !important; */
+    }
+    *, *::before, *::after {
+        box-sizing: border-box;
+    }
+
+    html, body{
+        margin: 0px;
+        padding: 0px;
+        min-width: 160%;
+    }
+
+
+    .navbar{
+        display: flex;
+        margin-left: 350px;
+    }
+
+    .video__button {
+        position: relative;
+        top: 9.6rem;
+        right: 17rem;
+        bottom: -1rem;
+    }
+
+    .gallary .gallary_image_box .gallary_image h3{
+        font-size: 30px;
+        margin-bottom: 130px;
+        width: 250px;
+    }
+    
+    .gallary .gallary_image_box .gallary_image:hover h3{
+        opacity: 1;
+    }
+    
+    .gallary .gallary_image_box .gallary_image p{
+        width: 380px;
+        margin-top: 30px;
+    }
+    
+    .gallary .gallary_image_box .gallary_image:hover p{
+        opacity: 1;
+    }
+    
+    .gallary .gallary_image_box .gallary_image .gallary_btn{
+        height: 40px;
+        font-size: 10px;
+        font-weight: 2;
+    }
+    
+    .gallary .gallary_image_box .gallary_image:hover .gallary_btn{
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    .video{
+        min-width: 100%;
+    }
+
+
+    .foot-content{
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+    }
+
+
+}
