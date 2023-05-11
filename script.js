@@ -13,21 +13,26 @@ window.addEventListener('scroll',() =>{
 })
 
 /*==================== VIDEO ====================*/
-const videoFile = document.getElementById('video-file'),
+const videoFile1 = document.getElementById('video-file'),
+      videoFile2 = document.getElementById('blurred'),
       videoButton = document.getElementById('video-button'),
       videoIcon = document.getElementById('video-icon')
 
+videoFile2.volume=0;      
+
 function playPause(){ 
-    if (videoFile.paused){
+    if (videoFile1.paused){
         // Play video
-        videoFile.play()
+        videoFile1.play()
+        videoFile2.play()
         // We change the icon
         videoIcon.classList.add('ri-pause-line')
         videoIcon.classList.remove('ri-play-line')
     }
     else {
         // Pause video
-        videoFile.pause(); 
+        videoFile1.pause(); 
+        videoFile2.pause();
         // We change the icon
         videoIcon.classList.remove('ri-pause-line')
         videoIcon.classList.add('ri-play-line')
@@ -41,7 +46,18 @@ function finalVideo(){
     videoIcon.classList.remove('ri-pause-line')
     videoIcon.classList.add('ri-play-line')
 }
+
+video1.addEventListener('seeked', function() {
+    videoFile2.currentTime = videoFile1.currentTime;
+});
+
+video2.addEventListener('seeked', function() {
+    videoFile1.currentTime = videoFile2.currentTime;
+});
 // ended, when the video ends
+
+
+
 videoFile.addEventListener('ended', finalVideo)
 
 function checkOrientation() {
@@ -61,3 +77,4 @@ function checkOrientation() {
 window.addEventListener('load', checkOrientation, false);
 window.addEventListener('resize', checkOrientation, false);
 window.addEventListener('orientationchange', checkOrientation, false);
+
