@@ -695,7 +695,7 @@ textarea::-webkit-scrollbar-thumb{
   /* media queries */
 
 
-@media screen and (min-width: 480px) {
+@media screen and (max-width: 480px) {
     *{
         margin:0;
         padding:0;
