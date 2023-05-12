@@ -695,7 +695,7 @@ textarea::-webkit-scrollbar-thumb{
   /* media queries */
 
 
-@media screen and (min-width: 840px) {
+@media screen and (max-width: 840px) {
     *{
         margin:0;
         padding:0;
@@ -716,6 +716,8 @@ textarea::-webkit-scrollbar-thumb{
         display: flex;
         margin-left: 350px;
     }
+
+
 
     .video__button {
         position: relative;
