@@ -39,6 +39,7 @@ header{
     top: 0;
     left:0;
     width: 100%;
+    /* min-width: 100vh; */
     padding: 30px 100px;
     display: flex;
     justify-content: space-between;
@@ -50,6 +51,7 @@ header{
     display: inline-block;
     margin-top: 15px;
 }
+
 
 .navbar a{
     color: white;
@@ -291,47 +293,6 @@ header{
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
 }
 
-@media screen and (max-width: 540px) {
-  .wrapper .video-controls{
-    padding: 3px 10px 7px;
-  }
-  .options input, .progress-area span{
-    display: none!important;
-  }
-  .options button{
-    height: 30px;
-    width: 30px;
-    font-size: 17px;
-  }
-  .options .video-timer{
-    margin-left: 5px;
-  }
-  .video-timer .separator{
-    font-size: 14px;
-    margin: 0 2px;
-  }
-  .options button :where(i, span) {
-    line-height: 30px;
-  }
-  .options button span{
-    font-size: 21px;
-  }
-  .options .video-timer, .progress-area span, .speed-options li{
-    font-size: 12px;
-  }
-  .playback-content .speed-options{
-    width: 75px;
-    left: -30px;
-    bottom: 30px;
-  }
-  .speed-options li{
-    margin: 1px 0;
-    padding: 3px 0 3px 10px;
-  }
-  .right .pic-in-pic{
-    display: none;
-  }
-}
 .blur{
   width: 150%;
   height: 150%;
@@ -346,7 +307,7 @@ header{
 
 .video p{
     margin-top: 70px;
-    text-align: left;
+    text-align: center;
     color: #fff;
 }
 
@@ -356,7 +317,7 @@ header{
 
   
 .video__description {
-    text-align: justify;
+    text-align:justify;
     margin-bottom: var(--mb-2-5);
 }
 
@@ -368,6 +329,7 @@ header{
     justify-content: center;
     align-items: center;
 }
+
 
 .video__content video{
     display: inline-block;
@@ -666,31 +628,11 @@ textarea::-webkit-scrollbar-thumb{
     
   }
 
-  /* Styles for the overlay and popup message */
-  #overlay {
-    display: none;
-    position: fixed;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: rgba(0,0,0,0.5);
-    z-index: 2;
-    cursor: pointer;
-}
 
-#text{
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    font-size: 20px;
-    color: white;
-    text-align: center;
-    transform: translate(-50%,-50%);
-    -ms-transform: translate(-50%,-50%);
-}
+
+
+
+
 
   /* media queries */
 
@@ -717,6 +659,9 @@ textarea::-webkit-scrollbar-thumb{
         margin-left: 350px;
     }
 
+    .parallax{
+        height: 200vh;
+    }
 
 
     .video__button {
@@ -729,7 +674,8 @@ textarea::-webkit-scrollbar-thumb{
     .gallary .gallary_image_box .gallary_image h3{
         font-size: 30px;
         margin-bottom: 130px;
-        width: 250px;
+        width: 280px;
+        text-align: center;
     }
     
     .gallary .gallary_image_box .gallary_image:hover h3{
@@ -746,9 +692,10 @@ textarea::-webkit-scrollbar-thumb{
     }
     
     .gallary .gallary_image_box .gallary_image .gallary_btn{
-        height: 40px;
+        height: 35px;
         font-size: 10px;
-        font-weight: 2;
+        font-weight: 3;
+        margin-top: 200px;
     }
     
     .gallary .gallary_image_box .gallary_image:hover .gallary_btn{
@@ -760,12 +707,27 @@ textarea::-webkit-scrollbar-thumb{
         min-width: 100%;
     }
 
-
     .foot-content{
         display: flex;
         align-items: center;
-        justify-content: space-around;
     }
 
+    .foot .foot-content .foot-box img{
+        margin-left: 50px;
+        margin-top: 0px;
+    }
+    
+    .foot .foot-content .foot-box .links{
+        margin-left: 0px;
+        padding-left: 20px;
+        margin-right: -110px;
+        margin-bottom: 100px;
+    }
+
+    .foot .foot-content .foot-box .wrapper{
+        margin-bottom: 100px;
+    }
+    
+    
 
 }
